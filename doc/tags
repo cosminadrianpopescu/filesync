@@ -1,0 +1,13 @@
+:FileSync	sync.txt	/*:FileSync*
+:FileSyncCmd	sync.txt	/*:FileSyncCmd*
+:FileSyncFunc	sync.txt	/*:FileSyncFunc*
+:FileSyncList	sync.txt	/*:FileSyncList*
+:FileSyncNetrw	sync.txt	/*:FileSyncNetrw*
+g:Sync_default_args	sync.txt	/*g:Sync_default_args*
+g:Sync_default_command	sync.txt	/*g:Sync_default_command*
+sync	sync.txt	/*sync*
+sync-commands	sync.txt	/*sync-commands*
+sync-intro	sync.txt	/*sync-intro*
+sync-options	sync.txt	/*sync-options*
+sync-usage	sync.txt	/*sync-usage*
+sync.txt	sync.txt	/*sync.txt*

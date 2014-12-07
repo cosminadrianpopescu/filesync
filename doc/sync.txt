@@ -1,0 +1,92 @@
+*sync.txt*                File synchronization for Vim
+
+==============================================================================
+CONTENTS                                                             *sync*
+
+    1. Intro .......................................... |sync-intro|
+    2. Usage .......................................... |sync-usage|
+    3. Commands ....................................... |sync-commands|
+    4. Options ........................................ |sync-options|
+
+==============================================================================
+INTRO                                                          *sync-intro*
+
+FileSync offers file synchronization functionality. Once you save a file, it
+can be synchronized to another folder. 
+
+If you also have netrw plugin, you can also synchronize with anything that
+netrw can save. This means ftp, ssh, scp and any other protocol that
+netrw supports. 
+
+                                                                |netrw-contents|
+
+
+==============================================================================
+USAGE                                                          *sync-usage*
+
+FileSync offers 3 ways of synchronizing files: 
+
+    Using a system or VIM command
+        |:FileSync| ~/.vim/bundle/sync /tmp/sync
+    Using netrw
+        |:FileSyncNetrw| ~/.vim/bundle/sync/ ftp://127.0.0.1/sync
+    Using a custom command: 
+        |:FileSyncCmd| ~/.vim/bundle/sync /tmp/sync !cp -f
+    Using a custom vimscript function
+        |:FileSyncFunc| ~/.vim/bundle/sync/ /tmp/sync My_cp
+
+
+You can also get a list of active syncs: 
+    |:FileSyncList|
+
+
+==============================================================================
+COMMANDS                                                       *sync-commands*
+
+These are file sync commands.
+
+*:FileSync*
+                Adds a new folder to be synchronized when saving. 
+>
+:FileSync ~/.vim/bundle/sync/ /tmp/sync/
+<
+
+*:FileSyncNetrw*
+                Add a new folder to be synchronized when saving using netrw.
+>
+:FileSyncNetrw ~/.vim/bundle/sync/ ftp://127.0.0.1/sync
+<
+
+*:FileSyncCmd*
+                Add a new folder to be synchronized when saving using a custom
+command.
+>
+:FileSyncCmd ~/.vim/bundle/sync /tmp/sync !cp -f
+<
+
+*:FileSyncFunc*
+                Add a new folder to be synchronized when saving using a custom
+vimscript function
+>
+:FileSyncFunc ~/.vim/bundle/sync/ /tmp/sync My_cp
+<
+
+*:FileSyncList*
+                List the active syncs
+>
+:FileSyncList
+<
+
+==============================================================================
+OPTIONS                                                      *sync-options*
+
+*g:Sync_default_command*
+                The default command to be used when synchronizing a file
+
+*g:Sync_default_args*
+                The default arguments to be passed to the command when
+synchronizing a file
+
+==============================================================================
+
+_\__/_  \_(-_- \) ...sync...                                 vim:tw=78:ft=help
