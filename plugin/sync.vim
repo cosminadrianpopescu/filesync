@@ -40,7 +40,7 @@ function! sync#add(source, dest, command, ...)
     endif
     let comm = a:command
     if a:command == ''
-        let comm = g:Sync_default_command
+        let comm = g:sync_default_command
     elseif matchstr(comm, '\v^f:') != ''
         let comm = 'func'
         let pars = substitute(a:command, '\v^f:', '', 'g')

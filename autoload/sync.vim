@@ -20,12 +20,18 @@ if exists('g:loaded_sync') || v:version < 700
 endif
 let g:loaded_sync = 1
 
-let g:Sync_default_command = '!rsync'
-let g:Sync_default_args = ''
+if (!exists('g:sync_default_command'))
+	let g:sync_default_command = '!rsync'
+endif
+
+if (!exists('g:sync_default_args'))
+	let g:sync_default_args = ''
+endif
+
 let g:Sync = []
 
 " commands
-command! -nargs=+ -complete=dir FileSync call sync#add(<f-args>, '')
+command! -nargs=+ -complete=dir FileSync call sync#add(<f-args>, g:sync_default_command, g:sync_default_args)
 command! -nargs=+ -complete=dir FileSyncNetrw call sync#add(<f-args>, 'netrw', '')
 command! -nargs=+ -complete=dir FileSyncCmd call sync#add(<f-args>)
 command! -nargs=+ -complete=dir FileSyncFunc call sync#add_custom_function(<f-args>)
