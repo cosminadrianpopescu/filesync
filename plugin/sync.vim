@@ -112,7 +112,7 @@ function! sync#execute()
     endfor
 endfunction
 
-function! b:sync_operation(op, line)
+function! <SID>sync_operation(op, line)
     let pattern = '\v^([0-9]+):.*$'
     if (match(a:line, pattern) != 0)
         return 
@@ -144,8 +144,8 @@ function! sync#list_syncs()
 	setlocal nobuflisted
 
 	nnoremap <buffer> <silent> q :bwipeout!<CR>
-	nnoremap <buffer> <silent> e :call b:sync_operation('d', getline('.'))<CR>
-	nnoremap <buffer> <silent> r :call b:sync_operation('r', getline('.'))<CR>
+	nnoremap <buffer> <silent> e :call <SID>sync_operation('d', getline('.'))<CR>
+	nnoremap <buffer> <silent> r :call <SID>sync_operation('r', getline('.'))<CR>
 
 	syn match Comment "^\".*"
 	put = '\"-----------------------------------------------------'
